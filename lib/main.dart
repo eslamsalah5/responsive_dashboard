@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_dashboard/views/dashboard_view.dart';
 
 void main() {
@@ -10,8 +11,13 @@ class ResponsiveDashBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: DashboardView(),
+    return  MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Responsive Dashboard',
+       theme: ThemeData(
+        fontFamily: GoogleFonts.montserrat().fontFamily,
+       ), 
+      home: const DashboardView(),
     );
   }
 }
