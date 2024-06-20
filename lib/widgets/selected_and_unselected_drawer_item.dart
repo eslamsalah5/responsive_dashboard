@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:responsive_dashboard/models/drawer_item_model.dart';
@@ -18,9 +17,13 @@ class SelectedDrawerItem extends StatelessWidget {
       padding: const EdgeInsetsDirectional.only(top: 20.0),
       child: ListTile(
           leading: SvgPicture.asset(drawerItem.assetImage),
-          title: Text(
-            drawerItem.title,
-            style: Styles.bold16,
+          title: FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: AlignmentDirectional.centerStart,
+            child: Text(
+              drawerItem.title,
+              style: Styles.bold16(context),
+            ),
           ),
           trailing: Container(
             width: 3.27,
@@ -44,9 +47,13 @@ class UnSelectedDrawerItem extends StatelessWidget {
       padding: const EdgeInsetsDirectional.only(top: 20.0),
       child: ListTile(
         leading: SvgPicture.asset(drawerItem.assetImage),
-        title: Text(
-          drawerItem.title,
-          style: Styles.regular16,
+        title: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: AlignmentDirectional.centerStart,
+          child: Text(
+            drawerItem.title,
+            style: Styles.regular16(context),
+          ),
         ),
       ),
     );
